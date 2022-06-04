@@ -1,21 +1,26 @@
 # import random module
 import random
 
-
+#makes the whole program a loop, so the game can be played continously
 while True:
     #store possible outcomes in list
     possible_outcomes = ["R", "P", "S"]
 
-    # Take user input
+    # Takes user input
     user_action = input("Enter a choice (R, P, S): ")
     while user_action not in possible_outcomes:
         user_action = input("That is not a valid choice. Please try again: ")
 
-    #computer's choice
+    
+    #Computer makes choice
     computer_action = random.choice(possible_outcomes)
 
+    
+    #print out user and computer's choice
     print(f"\nPlayer({user_action}) : CPU({computer_action})\n")
     
+    
+    #compute all possibilities and prints out the results
     if user_action == computer_action:
         print(f"Both players selected {user_action}. It's a tie!")
     elif user_action == "R":
